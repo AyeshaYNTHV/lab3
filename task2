@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+int binomialCoeff(int n, int k) {
+    // Base cases: C(n,n) = 1 and C(n,0) = 1
+    if (k == 0 || k == n) {
+        return 1;
+    }
+    
+    // Recursive case: C(n,k) = C(n-1, k-1) + C(n-1,k)
+    return binomialCoeff(n-1, k-1) + binomialCoeff(n-1, k);
+}
+
+int main() {
+    int n, k;
+    std::cout << "Enter values for n and k: ";
+    std::cin >> n >> k;
+    
+    // Call the recursive function
+    int coeff = binomialCoeff(n, k);
+    
+    std::cout << "C(" << n << ", " << k << ") = " << coeff << std::endl;
+    
+    return 0;
+}
