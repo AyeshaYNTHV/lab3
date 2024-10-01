@@ -1,0 +1,25 @@
+#include <iostream>
+
+// Recursive function to print numbers from n to 0
+void printNumbers(int n) {
+    // Base case: if n is 0, stop recursion
+    if (n == 0) {
+        std::cout << n << std::endl;
+        return;
+    }
+    
+    // Recursive case: print n and call function with n-1
+    std::cout << n << std::endl;
+    printNumbers(n-1);
+}
+
+int main() {
+    int n;
+    std::cout << "Enter a number: ";
+    std::cin >> n;
+    
+    // Call the recursive function
+    printNumbers(n);
+    
+    return 0;
+}
